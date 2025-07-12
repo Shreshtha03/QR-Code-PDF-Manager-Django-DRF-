@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR PDF App</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<div class="container">
+    <h1>📄 Upload PDF & Generate QR</h1>
+
+    <form id="uploadForm" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <input type="file" name="pdf_file" required>
+        <button type="submit">Generate QR</button>
+        <button type="button" onclick="downloadSelectedPDFs()">Download as (ZIP)</button>
+    </form>
+
+    <h2>Uploaded PDFs</h2>
+    <table id="pdfTable">
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>File Name</th>
+                <th>View</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div id="qrPreview" style="display:none;">
+        <h3>QR Code Preview</h3>
+        <p id="fileNameDisplay"></p>
+        <img id="qrImage" src="" alt="QR Code">
+        <br>
+        <a id="downloadQR" href="" download>Download QR Code</a>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+<script src="{% static 'first.js' %}"></script>
+</body>
+</html>
