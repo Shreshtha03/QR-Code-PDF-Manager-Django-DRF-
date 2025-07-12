@@ -105,11 +105,6 @@ qr_proj/
 ## 🙌 Credits
 
 Built with 💙 using Django, Django REST Framework, and QRCode module.\
-Made by [Your Name](https://github.com/yourusername)
+Made by [Shreshtha Srivastava](https://github.com/Shreshtha03)
 
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
 
